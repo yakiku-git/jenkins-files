@@ -5,7 +5,8 @@ node('ecs-small-3gb'){
 
     stage('Test') {
         echo 'Testing...'
-        sh 'ls -la'
+        sh 'curl -i http://20.113.95.180/TESTTEST'
+        sh 'ls -la /'
     }
 
     stage('Deploy') {
