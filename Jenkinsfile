@@ -6,7 +6,6 @@ node('ecs-small-3gb'){
     stage('Test') {
         echo 'Testing...'
         sh 'python3 --version'
-        sh 'which nc'
         sh 'ls -la ./'
         sh 'id && whoami'
     }
