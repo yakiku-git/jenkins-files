@@ -1,4 +1,4 @@
-node {
+node('Jenkins'){
     stage('Build') {
         echo 'Building...'
     }
