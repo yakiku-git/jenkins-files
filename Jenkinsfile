@@ -1,4 +1,4 @@
-node('Jenkins'){
+node('ecs-small-3gb'){
     stage('Build') {
         echo 'Building...'
     }
